@@ -88,7 +88,8 @@ name2的值为： 10
 name1的值为： 1676475168   
 name2的值为： 1676475168
 ```
-PS： 通过ID可以查看name1和name2在内存中的值相同
+PS：
+  通过ID可以查看name1和name2在内存中的值相同
 
 * Example:  重新赋值变量
 ```
@@ -135,7 +136,8 @@ False
 >>> keyword.iskeyword('ccc')                 # 不是关键字
 False
 ```
-PS：python中，为系统关键字为True,不是系统关键字为False
+PS：
+   python中，为系统关键字为True,不是系统关键字为False
 
 
 * 运算符与表达式
@@ -175,7 +177,9 @@ PS：python中，为系统关键字为True,不是系统关键字为False
 ==         # 等于
 !=         # 不等于
 ```
-PS: 该运算符的值为: True 和 False
+PS:
+  该运算符的值为: True 和 False  
+
 * 逻辑运算符
 ```
 and        # 与         True and False
@@ -195,7 +199,7 @@ Lambda --> 逻辑运算符(or) --> 逻辑运算符(and) --> 逻辑运算符(not)
 ```
 
 
-作业：
+作业：  
     -- 要求从键盘读取数字
 
 * Example: 写一个四则运算符    
@@ -231,21 +235,14 @@ d = int(input("请输入第四个数字: "))
 num = a + b * c / d
 print("计算的结果为: %s" %num)
 ```
-PS： input() 与 raw_input() 区别  
-   -- 都是内建函数  
-   -- 通过控制台输入与用户实现交互  
-   -- 接收字符串  
-   -- raw_input() 返回字符串类型  
-   -- input() 返回数值类型
+PS：input() 与 raw_input() 区别  
+     -- 都是内建函数  
+     -- 通过控制台输入与用户实现交互  
+     -- 接收字符串  
+     -- raw_input() 返回字符串类型  
+     -- input() 返回数值类型
 
-
-
-## Python基础(第三天)
-学习目录
-> * Python数值和字符串  
-> * 元组
-
-一、数值和字符串  
+三、数值和字符串  
 > * 数据类型  
     -- 数值  
     -- 字符串  
