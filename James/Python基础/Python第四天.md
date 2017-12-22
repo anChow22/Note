@@ -229,8 +229,8 @@ Out[312]:
  ('y', 121),
  ('z', 122)]
  ```
- PS： 参考文档
-      http://blog.csdn.net/tangtanghao511/article/details/47810729
+ PS： 参考文档  
+      http://blog.csdn.net/tangtanghao511/article/details/47810729  
 
 * Example: 将该字典按照ASCII码的值排序
 ```    
@@ -268,7 +268,99 @@ Out[319]:
 ```
 * Example: 用最简洁的代码，自己生成一个大写字母 A-Z 及其对应的ASCII码值的字典dict2(使用dict，zip，range方法)  
 ```  
-# 方法一(同事思考)
+# 方法一(同事实现)
+In [383]:  str_upper = [key for key in string.uppercase]
+
+In [384]: str_upper
+Out[384]:
+['A',
+ 'B',
+ 'C',
+ 'D',
+ 'E',
+ 'F',
+ 'G',
+ 'H',
+ 'I',
+ 'J',
+ 'K',
+ 'L',
+ 'M',
+ 'N',
+ 'O',
+ 'P',
+ 'Q',
+ 'R',
+ 'S',
+ 'T',
+ 'U',
+ 'V',
+ 'W',
+ 'X',
+ 'Y',
+ 'Z']
+
+In [385]: str_ascii = [ord(str_upper[0]) + value for value in range(len(str_upper))]
+
+In [386]: str_ascii
+Out[386]:
+[65,
+ 66,
+ 67,
+ 68,
+ 69,
+ 70,
+ 71,
+ 72,
+ 73,
+ 74,
+ 75,
+ 76,
+ 77,
+ 78,
+ 79,
+ 80,
+ 81,
+ 82,
+ 83,
+ 84,
+ 85,
+ 86,
+ 87,
+ 88,
+ 89,
+ 90]
+
+In [387]: dict(zip(str_upper, str_ascii))
+Out[387]:
+{'A': 65,
+ 'B': 66,
+ 'C': 67,
+ 'D': 68,
+ 'E': 69,
+ 'F': 70,
+ 'G': 71,
+ 'H': 72,
+ 'I': 73,
+ 'J': 74,
+ 'K': 75,
+ 'L': 76,
+ 'M': 77,
+ 'N': 78,
+ 'O': 79,
+ 'P': 80,
+ 'Q': 81,
+ 'R': 82,
+ 'S': 83,
+ 'T': 84,
+ 'U': 85,
+ 'V': 86,
+ 'W': 87,
+ 'X': 88,
+ 'Y': 89,
+ 'Z': 90}
+
+# 方法二(同事思考)
 In [368]: import string
 In [369]: dict2  = {(key： ord(key)) for key in string.uppercase}
 In [370]: dict2
@@ -320,10 +412,75 @@ for i in str:
 
 print(dict1)
 ```
-PS： 参考文档
-     http://blog.csdn.net/mtbaby/article/details/54907454
-     https://www.cnblogs.com/diaosir/p/6575891.html
+PS： 参考文档  
+     http://blog.csdn.net/mtbaby/article/details/54907454  
+     https://www.cnblogs.com/diaosir/p/6575891.html  
 * Example: 将dict2与第一题排序后的dict1合并成一个dict3
 ```  
+In [395]: dict1 = {'a': 97, 'c': 99, 'b': 98, 'e': 101, 'd': 100, 'g': 103, 'f': 102, 'i': 105,
+     ...: 'h': 104, 'k': 107, 'j': 106, 'm': 109, 'l': 108, 'o': 111, 'n': 110, 'q': 113, 'p': 1
+     ...: 12, 's': 115, 'r': 114, 'u': 117, 't': 116, 'w': 119, 'v': 118, 'y': 121, 'x': 120, 'z
+     ...: ': 122}
 
+In [396]: dict2.update(dict1)
+
+In [397]: dict3 = dict2
+
+In [398]: dict3
+Out[398]:
+{'A': 65,
+ 'B': 66,
+ 'C': 67,
+ 'D': 68,
+ 'E': 69,
+ 'F': 70,
+ 'G': 71,
+ 'H': 72,
+ 'I': 73,
+ 'J': 74,
+ 'K': 75,
+ 'L': 76,
+ 'M': 77,
+ 'N': 78,
+ 'O': 79,
+ 'P': 80,
+ 'Q': 81,
+ 'R': 82,
+ 'S': 83,
+ 'T': 84,
+ 'U': 85,
+ 'V': 86,
+ 'W': 87,
+ 'X': 88,
+ 'Y': 89,
+ 'Z': 90,
+ 'a': 97,
+ 'b': 98,
+ 'c': 99,
+ 'd': 100,
+ 'e': 101,
+ 'f': 102,
+ 'g': 103,
+ 'h': 104,
+ 'i': 105,
+ 'j': 106,
+ 'k': 107,
+ 'l': 108,
+ 'm': 109,
+ 'n': 110,
+ 'o': 111,
+ 'p': 112,
+ 'q': 113,
+ 'r': 114,
+ 's': 115,
+ 't': 116,
+ 'u': 117,
+ 'v': 118,
+ 'w': 119,
+ 'x': 120,
+ 'y': 121,
+ 'z': 122}
 ```
+
+> * 博文参看  
+http://www.cnblogs.com/Caesary/p/5508152.html  
