@@ -327,7 +327,7 @@ digit = list(getnum(0, d, 1))
 print "%r 共可以组成%d个三位数字 " % (d, len(digit))
 print "它们是:%r" % digit
 ```
-PS: 参考文档
+PS: 参考文档  
     http://blog.csdn.net/u013901768/article/details/75448177  
     https://zhidao.baidu.com/question/329856308887127725.html  
 * Example: 第2题
