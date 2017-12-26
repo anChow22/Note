@@ -328,8 +328,8 @@ print "%r 共可以组成%d个三位数字 " % (d, len(digit))
 print "它们是:%r" % digit
 ```
 PS: 参考文档
-    http://blog.csdn.net/u013901768/article/details/75448177
-    https://zhidao.baidu.com/question/329856308887127725.html
+    http://blog.csdn.net/u013901768/article/details/75448177  
+    https://zhidao.baidu.com/question/329856308887127725.html  
 * Example: 第2题
 ```
 """
@@ -366,7 +366,7 @@ for i in range(100, 1000):
     if i == x ** 3 + y ** 3 + z ** 3:
         print(i)
 ```
-PS: 参考文档
+PS: 参考文档  
     https://www.cnblogs.com/iderek/p/5958568.html
 * Example: 第3题
 ```
@@ -388,5 +388,5 @@ for i in first_list:
                     if(i!='x')and(k!='x')and(k!='z'):
                         print('a pk %s,b pk %s,c pk %s' %(i,j,k))
 ```
-PS： 参考文档
+PS： 参考文档  
      http://blog.51cto.com/yinsuifeng/1906088
