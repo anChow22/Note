@@ -369,100 +369,63 @@ Out[28]: str
 使用字符串的各种方法转换成如下方式
 ABCDEFGHIJKLMNOPQRSTUVWXYZzyxwvutsrqponmlkjihgfedcba
 """
-In [1]: import re                   # 导入正则模块
-In [2]: a = "   abc  deFGh&*ijkl opq mnrst((uvwxyz   "
-In [3]: b = "   ABC#DEF  GH%IJ MNOPQ KLRS&&TUVWX(*&YZ   "
-In [4]: a1 = re.findall(r'[a-z]', a)     # 通过findall()方法，查找[a-z]的值
-In [5]: b1 = re.findall(r'[A-Z]', b)     # 通过findall()方法，查找[a-z]的值
-In [6]: a1
-Out[6]:
-['a',
- 'b',
- 'c',
- 'd',
- 'e',
- 'h',
- 'i',
- 'j',
- 'k',
- 'l',
- 'o',
- 'p',
- 'q',
- 'm',
- 'n',
- 'r',
- 's',
- 't',
- 'u',
- 'v',
- 'w',
- 'x',
- 'y',
- 'z']
-In [7]: b1
-Out[7]:
-['A',
- 'B',
- 'C',
- 'D',
- 'E',
- 'F',
- 'G',
- 'H',
- 'I',
- 'J',
- 'M',
- 'N',
- 'O',
- 'P',
- 'Q',
- 'K',
- 'L',
- 'R',
- 'S',
- 'T',
- 'U',
- 'V',
- 'W',
- 'X',
- 'Y',
- 'Z']
-In [8]: a2 = sorted(a1,reverse = True)       # 反转排序
-In [9]: a2
-Out[9]:
-['z',
- 'y',
- 'x',
- 'w',
- 'v',
- 'u',
- 't',
- 's',
- 'r',
- 'q',
- 'p',
- 'o',
- 'n',
- 'm',
- 'l',
- 'k',
- 'j',
- 'i',
- 'h',
- 'e',
- 'd',
- 'c',
- 'b',
- 'a']
-In [10]: a3 = ''.join(a2)                       # 通过join()方法把列表转换成字符串
-In [11]: a3
-Out[11]: 'zyxwvutsrqponmlkjihedcba'
-In [12]: b2 = ''.join(b1)                       # 通过join()方法把列表转换成字符串
-In [13]: b2
-Out[13]: 'ABCDEFGHIJMNOPQKLRSTUVWXYZ'
-In [14]: b2 + a3                                # 字符串连接
-Out[14]: 'ABCDEFGHIJMNOPQKLRSTUVWXYZzyxwvutsrqponmlkjihedcba'
+### 方法一
+str1 = "   abc  deFGh&*ijkl opq mnrst((uvwxyz   "
+str2 = "   ABC#DEF  GH%IJ MNOPQ KLRS&&TUVWX(*&YZ   "
+# 移除空行及特殊字符
+str1 = str1.strip()
+str2 = str2.strip()
+# 去除字符串中间空格及特殊字符
+str1 = (str1.replace(' ', '')).replace('&*', '').replace('(', '')
+str2 = (str2.replace(' ', '')).replace('#', '').replace('%', '').replace('*', '').replace('&', '').replace('(', '')
+# 字符转换
+str1 = str1.lower()
+str2 = str2.upper()
+# 切片 调整 字符顺序
+str1 = str1[0:12] + str1[15:17] + str1[12:15] + str1[17:]
+str2 = str2[0:10] + str2[15:17] + str2[10:15] + str2[17:]
+# 对 str1 倒叙排列
+str1 = str1[::-1]
+# 字符串连接
+str3 = str2 + str1
+# 打印结果
+print(str1)
+print(str2)
+print(str3)
+
+###  方法二
+str1 = "   abc  deFGh&*ijkl opq mnrst((uvwxyz   "
+str2 = "   ABC#DEF  GH%IJ MNOPQ KLRS&&TUVWX(*&YZ   "
+# 移除空行及特殊字符
+str1 = (filter(lambda x:x.isalpha(), str1))
+str2 = (filter(lambda x:x.isalpha(), str2))
+# 大小写互换
+str1 = str1.lower()
+str2 = str2.upper()
+# 切片 调整 字符顺序
+str1 = str1[0:12] + str1[15:17] + str1[12:15] + str1[17:]
+str2 = str2[0:10] + str2[15:17] + str2[10:15] + str2[17:]
+# 对 str1 倒叙排列
+str1 = str1[::-1]
+# 字符串连接
+str3 = str2 + str1
+# 打印输入
+print(str1)
+print(str2)
+print(str3)
+
+### 字符串方法汇总
+# s.strip()         # 去除字符串两边指定字符
+# s.replace()       # 替换指定字符
+# s.lower()         # 把大写字符转换为小写字符
+# s.upper()         # 把小写字符转换为大写字符
+# s.isalnum()       # 所有字符都是数字或者字母，为真返回 Ture，否则返回 False。
+# s.isalpha()       # 所有字符都是字母，为真返回 Ture，否则返回 False。
+# s.isdigit()       # 所有字符都是数字，为真返回 Ture，否则返回 False。
+# s.islower()       # 所有字符都是小写，为真返回 Ture，否则返回 False。
+# s.isupper()       # 所有字符都是大写，为真返回 Ture，否则返回 False。
+# s.istitle()       # 所有单词都是首字母大写，为真返回 Ture，否则返回 False。
+# s.isspace()       # 所有字符都是空白字符，为真返回 Ture，否则返回 False。
 ```
 PS: 参考文档
 http://www.jb51.net/article/86187.htm
